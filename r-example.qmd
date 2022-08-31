@@ -1,0 +1,49 @@
+---
+title: "R and Quarto Example"
+date: "2022-08-06"
+execute: 
+  echo: true
+code-fold: true
+format: html
+---
+
+# Quarto and R
+
+This is an example of a quarto format file.
+
+To run it, use `quarto render r-example.qmd` on the command line
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(visdat)
+```
+
+## Loading the Data
+
+Here we load up penguins directly from the project using dxFUSE:
+
+```{r}
+
+penguins <- read.csv("penguins.csv")
+```
+
+## Showing the first few rows
+
+Now we can display the head of `penguins`
+
+```{r}
+head(penguins)
+```
+
+## A figure
+
+In @fig-penguins, we can see a visualization of the data types and missing data.
+
+```{r}
+#| label: fig-penguins
+#| fig-cap: Visualizing data types and missing data of penguins dataset.
+#| warning: false
+
+vis_dat(penguins)
+```

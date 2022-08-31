@@ -1,0 +1,132 @@
+---
+title: "Quarto and Dashboards"
+format: revealjs
+incremental: false
+---
+
+## RStudio Conference 2022
+
+- Quarto Publishing System: <https://quarto.org>
+  - Interchangeable with Jupyter Notebooks
+- **Observable + Shiny + Quarto**
+- **Shiny for Python**
+
+
+## What is Quarto?
+
+- **Reproducible Publishing** System based on Pandoc
+- One format, many outputs
+  - Website
+  - Publications
+  - Books
+  - **Dashboards**
+
+## .qmd files
+
+- Short for **q**uarto **m**ark**d**own
+- Decoupled from RStudio IDE
+  - plugins for VSCode, JupyterLab and such are available
+- Compile with quarto standalone:
+
+```
+quarto render my_document.qmd
+```
+
+## Cross Language Support
+
+- Supports a number of languages:
+    - R
+    - Python
+    - Julia
+    - Objservable
+- Can interchange between formats
+
+## How is Quarto different from Jupyter?
+
+- Render from scratch
+- More control over reproducibility
+
+## Jupyter Notebook Support
+
+- Jupyter Notebooks are cross compatible
+    - One command to interchange: 
+```    
+quarto convert notebook.ipynb
+```
+Fast way to publish Jupyter Notebooks
+
+## Layout Example
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- Highly customizable
+- Less work than using `<div>` tags
+:::
+
+::: {.column width="50%"}
+- Customizable in terms of layouts
+
+:::
+::::
+
+## Tabsets
+
+::: {.panel-tabset}
+
+### Code
+
+This is where I would put some code:
+
+```
+library(palmerpenguins)
+library(ggplot2)
+data(penguins)
+ggplot(penguins, aes(x=bill_depth_mm, y=bill_length_mm, color = species)) + geom_point()
+```
+
+### Figure
+
+```{r}
+library(palmerpenguins)
+library(ggplot2)
+data(penguins)
+ggplot(penguins, aes(x=bill_depth_mm, y=bill_length_mm, color = species)) + geom_point()
+```
+
+:::
+
+## Quarto Demo
+
+- r-example.qmd
+- python-example.qmd
+
+## Is it Important to Us?
+
+- Perhaps not immediately
+- Customers will want it
+- Focus on interactivity
+
+
+## Observable + Shiny + Quarto
+
+- Rapid prototyping of responsive dashboards
+- Uses Observable for front end
+- Uses Shiny reactives for backend
+- Quarto for Layout
+
+## Shiny for Python
+
+- Alpha release
+- Extends builiding Shiny Apps to Python
+- Uses Python Decorators
+- Try it out at <https://shinylive.io>
+
+
+
+## Is this useful to xVantage?
+
+- Quarto will be a format that customers want
+- More important: Responsive dashboards
+
+

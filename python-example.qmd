@@ -1,0 +1,41 @@
+---
+title: Python Quarto Example
+date: '2022-08-04'
+format: revealjs
+jupyter:
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+
+# Python Example
+
+This is an example of a Python-based Quarto document.
+
+The first thing we do is to read our file from project storage.
+
+```{python}
+import pandas as pd
+penguins = pd.read_csv("penguins.csv")
+```
+
+## Head of penguins data
+
+Here are the first few rows of the data.
+
+```{python}
+penguins.head()
+```
+
+## Describing the Data
+
+In @fig-desc, you can see the descriptive statistics for the penguins data.
+
+```{python}
+#| label: fig-desc
+#| fig-cap: Descriptive statistics for penguins data.
+penguins.describe()
+```
+
+
